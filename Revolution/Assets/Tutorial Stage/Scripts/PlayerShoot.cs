@@ -8,6 +8,7 @@ public class PlayerShoot : MonoBehaviour {
 
     [SerializeField]
     private Camera cam;
+<<<<<<< HEAD
     public ParticleSystem MiddleGunmuzzleFlash;
     public GameObject ImpactEffect;
     public float fireRate = 15.0f;
@@ -17,18 +18,29 @@ public class PlayerShoot : MonoBehaviour {
 
     //[SerializeField]
     //private LayerMask mask;
+=======
+
+    [SerializeField]
+    private LayerMask mask;
+>>>>>>> 918914bad8caa99b8a038e22c0fcf5ff56cfa1cd
 	
 	// Update is called once per frame
 	void Update () {
 		
+<<<<<<< HEAD
         if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
+=======
+        if(Input.GetButtonDown("Fire1"))
+        {
+>>>>>>> 918914bad8caa99b8a038e22c0fcf5ff56cfa1cd
             Shoot();
         }
 	}
 
     void Shoot()
+<<<<<<< HEAD
     {
         MiddleGunmuzzleFlash.Play();
         RaycastHit _hit;
@@ -49,6 +61,13 @@ public class PlayerShoot : MonoBehaviour {
 
             GameObject impactGo = Instantiate(ImpactEffect, _hit.point, Quaternion.LookRotation(_hit.normal));
             Destroy(impactGo, 2.0f);
+=======
+    { 
+        RaycastHit _hit;
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out _hit, Weapon.range, mask))
+        {
+            Debug.Log("We hit" + _hit.collider.name);
+>>>>>>> 918914bad8caa99b8a038e22c0fcf5ff56cfa1cd
         }
     }
 }

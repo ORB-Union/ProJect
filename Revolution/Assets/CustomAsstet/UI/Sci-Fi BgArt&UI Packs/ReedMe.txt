@@ -1,0 +1,22 @@
+Thank you for your purchase.
+
+*** Sci-Fi BgArt&UI-Icon Packs - Read Me - ***
+
+
+This is a set of Sci-Fi background image and UI for 2D games.
+Background image is 26 sheets and the UI & icons 14 sheets, are contained in the 686 pieces this pack.
+
+== Description ==
+
+-The description of terms of background image-
+
+The size of the background image is 3840x2160px.
+
+Image size of 03 and 05 and 10 there is a thing of 7680x2160px.
+They is possible to piece together if the same image.
+
+-The description of terms of UI & icons-
+
+The size of the sheet image is 3500x2000px.
+
+Component size There are the smallest in 250x250px, maximum of 1500x1500px.

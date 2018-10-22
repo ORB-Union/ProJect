@@ -6,13 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
-    public Canvas InGame_Canvas;
-
-    public Canvas InGameOptions_Canvas;
-
-    public Canvas Disable_Canvas;
-
-    public Canvas GG_Canvas;
+    public Canvas InGame_Canvas; // ESC 눌렀을때 등장하는 UI
+    public Canvas InGameOptions_Canvas; // Volume 옵션
+    public Canvas Disable_Canvas; // 평상시 화면표시(기본적 UI, 크로스헤어, 체력, 마나 표시)
+    public Canvas GG_Canvas; // 죽을 때 화면표시
 
     private bool SwitchOn;
     private bool Death;

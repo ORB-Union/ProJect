@@ -61,25 +61,7 @@ public class Cyborg_AI : MonoBehaviour{
         else
         {
             Cyborg_Disable_Enemy();
-        }
-
-        //if (Cyborg_Distance > Player_Distance && !Cyborg_Dead)   
-        //{
-        //    Find_Player();
-        //}
-
-        //else if (Cyborg_Can_Attack && !Player_Health.Player_Health_Singleton.Player_Dead)
-        //{
-        //    Attack_Player();
-        //}
-
-        //else if (Player_Health.Player_Health_Singleton.Player_Dead)
-        //{
-        //    Cyborg_Disable_Enemy();
-        //}
-
-
-    
+        }    
 	}
 
     public void Cyborg_Death()

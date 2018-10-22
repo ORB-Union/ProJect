@@ -1440,8 +1440,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cyborg_health: 100
+  Turn_On_HealthBar: {fileID: 0}
   Cyborg_Damaging_Sound: {fileID: 0}
   Cyborg_Dieing_Sound: {fileID: 0}
+  Cyborg_Blood_Splash: {fileID: 0}
 --- !u!136 &69549909
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12089,6 +12091,42 @@ Prefab:
       propertyPath: Weapon_Reloading_Sound
       value: 
       objectReference: {fileID: 8300000, guid: e0e3dd1d1e40c2946a1a580f13d216d5, type: 3}
+    - target: {fileID: 4561600478643280, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.364
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561600478643280, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561600478643280, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561600478643280, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561600478643280, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561600478643280, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561600478643280, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561600478643280, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.533
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561600478643280, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.599
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89, type: 2}
   m_IsPrefabParent: 0
@@ -17535,7 +17573,6 @@ MonoBehaviour:
   camera: {fileID: 242435497}
   slowDownAmount: 1
   shouldShake: 0
-  cameraShake: {fileID: 0}
   hurtCanvas: {fileID: 1503366520}
   InGame_Canvas: {fileID: 507504385}
   InGameOptions_Canvas: {fileID: 500185825}

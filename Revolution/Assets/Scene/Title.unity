@@ -220,6 +220,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114183251474055718, guid: 229d4396ed6195749bb31f11059d7d26,
+        type: 2}
+      propertyPath: m_Text
+      value: Lee Chang Gi (I N F I)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 229d4396ed6195749bb31f11059d7d26, type: 2}
   m_IsPrefabParent: 0

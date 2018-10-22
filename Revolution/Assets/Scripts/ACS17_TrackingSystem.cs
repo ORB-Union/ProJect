@@ -5,16 +5,11 @@ using UnityEngine;
 public class ACS17_TrackingSystem : MonoBehaviour
 {
     public float speed = 3.0f;
-
-
-
     public GameObject m_target = null;
 
     Vector3 m_lastKnownPosition = Vector3.zero;
     Quaternion m_lookAtRotation;
-    
-    
-
+   
     void Update()
     {
         if (m_target)

@@ -75,6 +75,22 @@ public class PlayerShoot : MonoBehaviour
         Weapon_Ammo_Text_Current.GetComponent<Text>().text = Current_Ammo.ToString();
         Weapon_Ammo_Text_Total.GetComponent<Text>().text = Total_Max_Ammo.ToString();
     }
+
+
+    void FixedUpdate()
+    {
+        AnimatorStateInfo info = Weapon_Animaitor.GetCurrentAnimatorStateInfo(0);
+        if (info.IsName("Raygun_Shoot"))
+        {
+            Weapon_Animaitor.SetBool("Shooting", false);
+        }
+
+        if (info.IsName("Sniper_Shoot"))
+        {
+            Weapon_Animaitor.SetBool("Shooting", false);
+        }
+        
+        }
     void Update()
     {
         if (Is_Reloading == false)
@@ -96,28 +112,12 @@ public class PlayerShoot : MonoBehaviour
 
         if (Current_Ammo <= 0 || Input.GetButton("Reload_Button") && Current_Ammo < Max_Ammo)
         {
-            //this.Weapon_Reload_Sound.clip = this.Weapon_Reloading_Sound;
-            //this.Weapon_Reload_Sound.loop = false;
-            //this.Weapon_Reload_Sound.Play();
-
-            //GameObject Gun_Reload_Sound = Instantiate(Weapon_Reload_Sound, this.transform.position, this.transform.rotation) as GameObject;
-            //Gun_Reload_Sound.transform.parent = this.transform;
-
             StartCoroutine(Reload());
             return;
         }
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
-            //is_Shooting = true;
-            //is_Shooting = true;
-            //this.Weapon_Shoot_Sound.clip = this.Weapon_Shooting_Sound;
-            //this.Weapon_Shoot_Sound.loop = false;
-            //this.Weapon_Shoot_Sound.Play();
-
-            //GameObject MiddleGunShoot = Instantiate(MiddleGunSound, this.transform.position, this.transform.rotation) as GameObject;
-            //MiddleGunShoot.transform.parent = this.transform;
-
             nextTimeToFire = Time.time + 1f / fireRate;
 
             Shoot();
@@ -127,7 +127,7 @@ public class PlayerShoot : MonoBehaviour
 
     IEnumerator Reload()
     {
-        //is_Shooting = false;
+        //_Shooting = false;
         Current_Ammo_int = Max_Ammo - Current_Ammo;
         //Debug.Log("Reloading..");
         Is_Reloading = true;
@@ -159,6 +159,7 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
+        Weapon_Animaitor.SetBool("Shooting", true);
         this.Weapon_Shoot_Sound.Stop();
         this.Weapon_Reload_Sound.Stop();
         Shoot_Sound();
@@ -167,7 +168,6 @@ public class PlayerShoot : MonoBehaviour
         MiddleGunmuzzleFlash.Play();
 
         Current_Ammo--;
-
         Weapon_Ammo_Text_Current.GetComponent<Text>().text = Current_Ammo.ToString();
 
         RaycastHit _hit;

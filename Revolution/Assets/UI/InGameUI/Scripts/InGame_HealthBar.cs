@@ -14,11 +14,6 @@ public class InGame_HealthBar : MonoBehaviour {
     [SerializeField]
     private Text ValueText;
 
-	// Use this for initialization  
-	void Start () {
-        
-	}
-	
 	// Update is called once per frame
 	void Update () {
         Health_HandleBar();
@@ -40,7 +35,6 @@ public class InGame_HealthBar : MonoBehaviour {
         }
 
     }
-
     public void Health_HandleBar()
     {
         if (Hp_FillAmount != content.fillAmount)
@@ -48,7 +42,6 @@ public class InGame_HealthBar : MonoBehaviour {
             content.fillAmount = Hp_FillAmount;
         }
     }
-
     private float Map(float value, float inMin, float inMax, float outMin, float outMax)
     {
         return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;

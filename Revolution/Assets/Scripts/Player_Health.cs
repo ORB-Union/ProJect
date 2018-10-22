@@ -43,10 +43,6 @@ public class Player_Health : MonoBehaviour
     public AudioClip Game_Overing; // 피격효과음
 
 
-
-
-    MessageHandler m_messageHandler;
-
     //private Game_Master gameManagerMaster;
     //private PlayerMaster playerMaster;
     //public int playerHealth;
@@ -81,23 +77,6 @@ public class Player_Health : MonoBehaviour
 
     public bool Player_Dead; // 플레이어 죽음여부
 
-    void RecieveMessage(MessageTypes msgType, GameObject go, MessageData msgData)
-    {
-        switch (msgType)
-        {
-            case MessageTypes.DAMAGED :
-                DamageData dmgData = msgData as DamageData;
-
-                if (dmgData != null)
-                {
-                    DoDamage(dmgData.damage, go);
-                    Damage_Player(dmgData.damage);
-                }
-                break;
-
-        }
-    }
-
     void Awake()
     {
         GGMenu.enabled = false;
@@ -119,10 +98,6 @@ public class Player_Health : MonoBehaviour
         this.audio_Hit = this.gameObject.AddComponent<AudioSource>();
         this.GameOver_Sound = this.gameObject.AddComponent<AudioSource>();
 
-        if (m_messageHandler)
-        {
-            m_messageHandler.RegisterDelegate(RecieveMessage);
-        }
 
         camera = Camera.main.transform;
         startPosition = camera.localPosition;
@@ -162,34 +137,6 @@ public class Player_Health : MonoBehaviour
             }
         }
 
-
-    }
-
-    void DoDamage(float dmg, GameObject go)
-    {
-        health_bar.CurrentVal -= dmg;
-        TurnOnHurtEffect();
-
-        if (health_bar.CurrentVal <= 0)
-        {
-            health_bar.CurrentVal = 0;
-            if (m_messageHandler)
-            {
-                DeathhData deathData = new DeathhData();
-                deathData.attacker = go;
-                deathData.attaked = gameObject;
-                m_messageHandler.GiveMessage(MessageTypes.DIED, gameObject, deathData);
-                Player_Death();
-            }
-            
-        }
-
-        if (m_messageHandler)
-        {
-            HealthData hpData = new HealthData();
-            hpData.maxHealth = maxHealth;
-            m_messageHandler.GiveMessage(MessageTypes.HEALTHCHANGED, gameObject, hpData);
-        }
 
     }
 

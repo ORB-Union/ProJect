@@ -49,6 +49,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+
+
         // Use this for initialization
         private void Start()
         {
@@ -62,13 +64,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            
+
         }
 
 
         // Update is called once per frame
         private void Update()
         {
-
             if (Options_UI.enabled == true || InGame_UI.enabled == true || GG_UI.enabled == true)
             {
                 Cursor.lockState = CursorLockMode.None;
@@ -79,7 +83,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             else
             {
-
                 RotateView();
                 // the jump state needs to read here to make sure it is not missed
                 if (!m_Jump)
@@ -202,6 +205,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_FootstepSounds[0] = m_AudioSource.clip;
         }
 
+      
+
 
         private void UpdateCameraPosition(float speed)
         {
@@ -225,7 +230,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             m_Camera.transform.localPosition = newCameraPosition;
         }
-
 
         private void GetInput(out float speed)
         {
@@ -292,5 +296,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
+
+
+
     }
+
 }

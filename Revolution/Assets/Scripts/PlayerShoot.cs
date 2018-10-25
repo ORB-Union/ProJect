@@ -34,6 +34,7 @@ public class PlayerShoot : MonoBehaviour
 
     private AudioSource Weapon_Reload_Sound; // 총 재장전 효과음
     public AudioClip Weapon_Reloading_Sound; // 총 재장전 효과음
+    
 
     private float nextTimeToFire = 0f;
 
@@ -46,11 +47,13 @@ public class PlayerShoot : MonoBehaviour
     private bool Is_Reloading = false;
     private bool is_Shooting = false;
 
-    public Animator Weapon_Animaitor;
+    public Animator Weapon_Animaitor; // 애니메이션 
 
 
     public Transform Weapon_Ammo_Text_Current; // 무기 탄창 정보
     public Transform Weapon_Ammo_Text_Total; // 무기 탄창 정보
+
+    private bool Running_Check;
 
     //public AudioSource GunSound;
     //private AudioClip clip;
@@ -68,8 +71,10 @@ public class PlayerShoot : MonoBehaviour
 
     void Start()
     {
+        Running_Check = false;
         this.Weapon_Shoot_Sound = this.gameObject.AddComponent<AudioSource>();
         this.Weapon_Reload_Sound = this.gameObject.AddComponent<AudioSource>();
+
 
         Current_Ammo = Max_Ammo;
         Weapon_Ammo_Text_Current.GetComponent<Text>().text = Current_Ammo.ToString();
@@ -93,11 +98,24 @@ public class PlayerShoot : MonoBehaviour
         }
     void Update()
     {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Weapon_Animaitor.SetBool("Running", true);
+            Running_Check = true;
+        }
+
+        if (!Input.GetKey(KeyCode.LeftShift))
+        {
+            Weapon_Animaitor.SetBool("Running", false);
+            Running_Check = false;
+        }
+
+
+
         if (Is_Reloading == false)
         {
             Weapon_Reload_Sound.Stop();
         }
-
 
         //if (is_Shooting == false)
         //{
@@ -234,7 +252,6 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-
     public void Reload_Sound()
     {
         this.Weapon_Reload_Sound.clip = this.Weapon_Reloading_Sound;
@@ -259,6 +276,8 @@ public class PlayerShoot : MonoBehaviour
     }
 
 
+
+
     //void OnTriggerStay(Collider other)
     //{
     //    if (other.gameObject.tag == "AmmoBox")
@@ -270,5 +289,7 @@ public class PlayerShoot : MonoBehaviour
     //    }
 
     //}
+
+
 
 }

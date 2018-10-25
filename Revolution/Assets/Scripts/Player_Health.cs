@@ -43,6 +43,15 @@ public class Player_Health : MonoBehaviour
     public AudioClip Game_Overing; // 피격효과음
 
 
+    public bool Player_Walk;
+
+    private AudioSource Normal_Breath_Sound; // 걸을때 숨소리
+    public AudioClip Normal_Breathing_Sound;
+
+    //public AudioSource Run_Breath_Sound; // 달릴때 효과음
+    //private AudioClip Running_Breath_Sound;
+
+
     //private Game_Master gameManagerMaster;
     //private PlayerMaster playerMaster;
     //public int playerHealth;
@@ -88,6 +97,7 @@ public class Player_Health : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Player_Walk = true;
         Player_hit = false;
         Player_HP = maxHealth;
         Player_Dead = false;
@@ -98,6 +108,7 @@ public class Player_Health : MonoBehaviour
         this.audio_Hit = this.gameObject.AddComponent<AudioSource>();
         this.GameOver_Sound = this.gameObject.AddComponent<AudioSource>();
 
+        this.Normal_Breath_Sound = this.gameObject.AddComponent<AudioSource>();
 
         camera = Camera.main.transform;
         startPosition = camera.localPosition;
@@ -236,5 +247,4 @@ public class Player_Health : MonoBehaviour
             health_bar.CurrentVal = 100;
         }
     }
-
 }

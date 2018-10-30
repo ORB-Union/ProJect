@@ -22,8 +22,14 @@ public class UI_Title_SoundManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         UI_Title_Audio.volume = Sound_Volume.value;
+ 
 	}
 
+
+    public void Mute()
+    {
+        AudioListener.pause = !AudioListener.pause;
+    }
     //Turn Music On / Off
     public void SoundOn_Off()
     {

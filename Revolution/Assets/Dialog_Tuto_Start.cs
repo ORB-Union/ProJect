@@ -12,6 +12,7 @@ public class Dialog_Tuto_Start : MonoBehaviour
     public Canvas Canvas4;
 
     private GameObject player;
+
     int count;
     
     // Use this for initialization
@@ -34,37 +35,37 @@ public class Dialog_Tuto_Start : MonoBehaviour
     {
         if (other.gameObject.tag == "PlayerFPS")
         {
+            Time.timeScale = 0;
+            if (Input.GetKeyDown(KeyCode.E))
+                count++;
+            if (count == 0)
             {
-                //Time.timeScale = 0;
-                if (Input.GetKeyDown(KeyCode.E))
-                    count++;
-                if (count == 0)
-                {
-                    Back.enabled = true;
-                    Canvas1.enabled = true;
-                }
-                else if (count == 1)
-                {
-                    Canvas1.enabled = false;
-                    Canvas2.enabled = true;
-                }
-                else if (count == 2)
-                {
-                    Canvas2.enabled = false;
-                    Canvas3.enabled = true;
-                }
-                else if (count == 3)
-                {
-                    Canvas3.enabled = false;
-                    Canvas4.enabled = true;
-                }
-                else if (count == 4)
-                {
-                    Canvas4.enabled = false;
-                    Back.enabled = false;
-                    Destroy(gameObject);
+                Back.enabled = true;
+                Canvas1.enabled = true;
+            }
+            else if (count == 1)
+            {
+                Canvas1.enabled = false;
+                Canvas2.enabled = true;
+            }
+            else if (count == 2)
+            {
+                Canvas2.enabled = false;
+                Canvas3.enabled = true;
+            }
+            else if (count == 3)
+            {
+                Canvas3.enabled = false;
+                Canvas4.enabled = true;
+            }
+            else if (count == 4)
+            {
+                Canvas4.enabled = false;
+                Back.enabled = false;
+                Time.timeScale = 0;
+                Destroy(gameObject);
+                
 
-                }
             }
         }
     }
@@ -78,8 +79,47 @@ public class Dialog_Tuto_Start : MonoBehaviour
         Canvas4.enabled = false;
         Destroy(gameObject);
     }
+
+
+
     // Update is called once per frame
-    void Update()
-    {
-    }
+    //void Update()
+    //{
+    //    if (player.transform.position.x >= -60 && player.transform.position.x <= -48 && player.transform.position.y <= 130 && player.transform.position.y >= 110 && player.transform.position.z >= -40 && player.transform.position.z <= -30)
+    //    {
+    //        Time.timeScale = 0;
+    //        if (Input.GetKeyDown(KeyCode.E))
+    //        {
+    //            count++;
+    //            if (count == 0)
+    //            {
+    //                Back.enabled = true;
+    //                Canvas1.enabled = true;
+    //            }
+    //            else if (count == 1)
+    //            {
+    //                Canvas1.enabled = false;
+    //                Canvas2.enabled = true;
+    //            }
+    //            else if (count == 2)
+    //            {
+    //                Canvas2.enabled = false;
+    //                Canvas3.enabled = true;
+    //            }
+    //            else if (count == 3)
+    //            {
+    //                Canvas3.enabled = false;
+    //                Canvas4.enabled = true;
+    //            }
+    //            else if (count == 4)
+    //            {
+    //                Canvas4.enabled = false;
+    //                Back.enabled = false;
+    //                Time.timeScale = 1;
+    //                //Destroy(gameObject);
+
+    //            }
+    //        }
+    //    }
+    //}
 }

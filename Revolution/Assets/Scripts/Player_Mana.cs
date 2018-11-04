@@ -11,6 +11,9 @@ public class Player_Mana : MonoBehaviour {
 
     public bool Weapon_Changable;
 
+    private AudioSource MP_Drink_Sound; // 체력회복 효과음
+    public AudioClip MP_Drinking_Sound; // 총발사효과음
+
     
 
     [SerializeField]
@@ -27,6 +30,7 @@ public class Player_Mana : MonoBehaviour {
         Player_MP = 100;
         Mana_bar.CurrentVal_Mp = Player_MP;
         Weapon_Changable = true;
+        this.MP_Drink_Sound = this.gameObject.AddComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -90,6 +94,7 @@ public class Player_Mana : MonoBehaviour {
 
     public void Mp_Increase(float MP_Cost)
     {
+        Drink_Sound();
         Mana_bar.CurrentVal_Mp += MP_Cost;
 
         if (Mana_bar.CurrentVal_Mp >= 100)
@@ -111,6 +116,16 @@ public class Player_Mana : MonoBehaviour {
             Mana_bar.CurrentVal_Mp -= Time.deltaTime * 3;
         }
     }
+
+    public void Drink_Sound()
+    {
+        this.MP_Drink_Sound.clip = this.MP_Drinking_Sound;
+        this.MP_Drink_Sound.loop = false;
+
+        this.MP_Drink_Sound.Stop();
+        this.MP_Drink_Sound.Play();
+    }
+
 
 
 }

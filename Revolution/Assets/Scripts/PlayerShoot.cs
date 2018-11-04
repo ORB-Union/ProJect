@@ -98,6 +98,7 @@ public class PlayerShoot : MonoBehaviour
         }
     void Update()
     {
+        Weapon_Shoot_Sound.volume = 0.5f;
         if (Input.GetKey(KeyCode.LeftShift))
         {
             Weapon_Animaitor.SetBool("Running", true);
@@ -263,6 +264,7 @@ public class PlayerShoot : MonoBehaviour
 
     public void Shoot_Sound()
     {
+
         this.Weapon_Shoot_Sound.clip = this.Weapon_Shooting_Sound;
         this.Weapon_Shoot_Sound.loop = false;
 

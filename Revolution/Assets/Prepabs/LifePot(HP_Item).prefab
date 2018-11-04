@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 65862524639915410}
   - component: {fileID: 114827885912598288}
   - component: {fileID: 114503457888609354}
+  - component: {fileID: 114894809066066696}
   m_Layer: 0
   m_Name: LifePot(HP_Item)
   m_TagString: Untagged
@@ -137,3 +138,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP_Trigger_Speech: {fileID: 0}
   HP_Increase_Cost: 20
+--- !u!114 &114894809066066696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1415209066202518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebcd7fee5df90c446920dd43f7be2a1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyTime: 30000

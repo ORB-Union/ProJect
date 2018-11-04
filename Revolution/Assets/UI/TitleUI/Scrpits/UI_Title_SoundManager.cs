@@ -13,16 +13,14 @@ public class UI_Title_SoundManager : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-
         //Get the AudioSource component in the game object
         UI_Title_Audio = GetComponent<AudioSource>();
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
         UI_Title_Audio.volume = Sound_Volume.value;
- 
+
 	}
 
 

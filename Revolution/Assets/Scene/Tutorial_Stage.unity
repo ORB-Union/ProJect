@@ -12053,7 +12053,7 @@ Prefab:
     - target: {fileID: 114404700582404690, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89,
         type: 2}
       propertyPath: Total_Max_Ammo
-      value: 100
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 114404700582404690, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89,
         type: 2}
@@ -12126,6 +12126,11 @@ Prefab:
     - target: {fileID: 4561600478643280, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89, type: 2}
       propertyPath: m_LocalPosition.z
       value: 2.599
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404700582404690, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89,
+        type: 2}
+      propertyPath: Max_Ammo
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a2eeaf2c9ec6a7438cfc0b014041f89, type: 2}
@@ -17523,6 +17528,7 @@ MonoBehaviour:
   Player_MP: 100
   Current_Player_MP: 0
   Weapon_Changable: 0
+  MP_Drinking_Sound: {fileID: 8300000, guid: 9fa9dd527e5b56f439eda219607f8b8e, type: 3}
   Mana_bar:
     Mp_bar: {fileID: 1776903857}
     maxVal_Mp: 100
@@ -17583,6 +17589,7 @@ MonoBehaviour:
   Game_Overing: {fileID: 8300000, guid: fb46d51f53b4cb847843264c4200bd6c, type: 3}
   Player_Walk: 0
   Normal_Breathing_Sound: {fileID: 0}
+  HP_Drinking_Sound: {fileID: 8300000, guid: 9fa9dd527e5b56f439eda219607f8b8e, type: 3}
   Player_HP: 100
   Current_Plyer_HP: 0
   ACS_Missile_Damage: 10
@@ -25718,7 +25725,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1608230884554778, guid: 99778354871bfe942a2752334e17d08f, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1548904953102560, guid: 99778354871bfe942a2752334e17d08f, type: 2}
       propertyPath: m_IsActive
@@ -25934,7 +25941,7 @@ Prefab:
     - target: {fileID: 224550295199946802, guid: 99778354871bfe942a2752334e17d08f,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 1200
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 224713481148610452, guid: 99778354871bfe942a2752334e17d08f,
         type: 2}

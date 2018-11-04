@@ -11,6 +11,10 @@ public class ACS17_Shoot_Sys : MonoBehaviour {
     public bool beam;
     public GameObject projectile;
     public GameObject target;
+
+    private AudioSource ACS_Shoot_Sound; // 총발사효과음
+    public AudioClip ACS_Shooting_Sound; // 총발사효과음
+
     
     public List<GameObject> projectileSpawns;
 
@@ -22,7 +26,7 @@ public class ACS17_Shoot_Sys : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        this.ACS_Shoot_Sound = this.gameObject.AddComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -72,6 +76,7 @@ public class ACS17_Shoot_Sys : MonoBehaviour {
 
     void SpawnProjectiles()
     {
+        Shoot_Sound();
         if (!projectile)
         {
             return;
@@ -95,4 +100,17 @@ public class ACS17_Shoot_Sys : MonoBehaviour {
     {
         m_target = target;
     }
+
+
+    public void Shoot_Sound()
+    {
+
+        this.ACS_Shoot_Sound.clip = this.ACS_Shooting_Sound;
+        this.ACS_Shoot_Sound.loop = false;
+
+        this.ACS_Shoot_Sound.Stop();
+        this.ACS_Shoot_Sound.Play();
+    }
+
+
 }

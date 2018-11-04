@@ -7232,6 +7232,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114894809066066696, guid: 169b9a4ab47175741b3d9f6224853de7,
+        type: 2}
+      propertyPath: DestroyTime
+      value: 3000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 169b9a4ab47175741b3d9f6224853de7, type: 2}
   m_IsPrefabParent: 0
@@ -15492,7 +15497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &880855230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20065,6 +20070,11 @@ Prefab:
       propertyPath: MP_Increase_Cost
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 114194586066376302, guid: fad8fc6d9d361e4429a70980366976d4,
+        type: 2}
+      propertyPath: DestroyTime
+      value: 3000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fad8fc6d9d361e4429a70980366976d4, type: 2}
   m_IsPrefabParent: 0
@@ -20970,6 +20980,16 @@ Prefab:
       propertyPath: Normal_Breathing_Sound
       value: 
       objectReference: {fileID: 8300000, guid: 593aec3bf9ea4944abe8b44d2863a982, type: 3}
+    - target: {fileID: 114733087688776326, guid: 75374b2e20f4f45409f6e2b6d8efbc50,
+        type: 2}
+      propertyPath: HP_Drinking_Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9fa9dd527e5b56f439eda219607f8b8e, type: 3}
+    - target: {fileID: 114192025814788364, guid: 75374b2e20f4f45409f6e2b6d8efbc50,
+        type: 2}
+      propertyPath: MP_Drinking_Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9fa9dd527e5b56f439eda219607f8b8e, type: 3}
     m_RemovedComponents:
     - {fileID: 114704880538612220, guid: 75374b2e20f4f45409f6e2b6d8efbc50, type: 2}
     - {fileID: 114144059436094228, guid: 75374b2e20f4f45409f6e2b6d8efbc50, type: 2}
@@ -32565,8 +32585,8 @@ MonoBehaviour:
     type: 3}
   Weapon_Reloading_Sound: {fileID: 8300000, guid: e0e3dd1d1e40c2946a1a580f13d216d5,
     type: 3}
-  Total_Max_Ammo: 100
-  Max_Ammo: 10
+  Total_Max_Ammo: 30
+  Max_Ammo: 2
   Reload_Time: 1
   Weapon_Animaitor: {fileID: 905826351}
   Weapon_Ammo_Text_Current: {fileID: 153343523}

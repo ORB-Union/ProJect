@@ -58,6 +58,9 @@ public class Player_Health : MonoBehaviour
     //public Text healthText;
 
 
+    private AudioSource HP_Drink_Sound; // 체력회복 효과음
+    public AudioClip HP_Drinking_Sound; // 총발사효과음
+
 
     //void DeductHealth(int healthChange)
     //{
@@ -109,6 +112,8 @@ public class Player_Health : MonoBehaviour
         this.GameOver_Sound = this.gameObject.AddComponent<AudioSource>();
 
         this.Normal_Breath_Sound = this.gameObject.AddComponent<AudioSource>();
+
+        this.HP_Drink_Sound = this.gameObject.AddComponent<AudioSource>();
 
         camera = Camera.main.transform;
         startPosition = camera.localPosition;
@@ -237,6 +242,7 @@ public class Player_Health : MonoBehaviour
 
     public void HP_Increase(float HP_Cost)
     {
+        Drink_Sound();
         if (Player_Dead == false)
         {
             health_bar.CurrentVal += HP_Cost;
@@ -247,4 +253,15 @@ public class Player_Health : MonoBehaviour
             health_bar.CurrentVal = 100;
         }
     }
+
+
+    public void Drink_Sound()
+    {
+        this.HP_Drink_Sound.clip = this.HP_Drinking_Sound;
+        this.HP_Drink_Sound.loop = false;
+
+        this.HP_Drink_Sound.Stop();
+        this.HP_Drink_Sound.Play();
+    }
+
 }

@@ -17631,8 +17631,7 @@ MonoBehaviour:
   weapon_UI_01: {fileID: 1538408710}
   weapon_UI_02: {fileID: 552675222}
   MiddleGun_Cost: 10
-  Long_RangeGun_Cost: 10
-  Launcher_Cost: 5
+  Long_RangeGun_Cost: 15
 --- !u!114 &1100880963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17657,7 +17656,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -29045,7 +29044,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "[ E ]  \uC67C \uCABD   S h i f t   :   \uB2EC \uB9AC \uAE30"
+  m_Text: "[ E ]  \uC67C \uCABD   S h i f t   :   \uB2EC \uB9AC \uAE30 / \uB2EC \uB9AC
+    \uAE30 \uC2DC \uC804  \uC2DC  M P \uC18C \uBAA8"
 --- !u!222 &1826268777
 CanvasRenderer:
   m_ObjectHideFlags: 0

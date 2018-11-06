@@ -18,7 +18,6 @@ public class WeaponSwitching : MonoBehaviour {
 
     public float MiddleGun_Cost;
     public float Long_RangeGun_Cost;
-    public float Launcher_Cost;
 
 
 	// Use this for initialization

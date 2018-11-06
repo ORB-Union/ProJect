@@ -20844,7 +20844,7 @@ Prefab:
     - target: {fileID: 114425506779747942, guid: 75374b2e20f4f45409f6e2b6d8efbc50,
         type: 2}
       propertyPath: Long_RangeGun_Cost
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114425506779747942, guid: 75374b2e20f4f45409f6e2b6d8efbc50,
         type: 2}

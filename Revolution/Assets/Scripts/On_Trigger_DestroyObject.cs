@@ -39,5 +39,6 @@ public class On_Trigger_DestroyObject : MonoBehaviour
     void OnTriggerExit()
     {
         Speech_Object.SetActive(false);
+        
     }
 }

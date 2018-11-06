@@ -48,6 +48,13 @@ public class Boss_Health : MonoBehaviour
         {
             Invoke("GameClear", 2.0f);
         }
+
+
+        if (Input.GetKey(KeyCode.K))
+        {
+            Current_Boss_health = 100f;
+
+        }
     }
 
     public void Boss_TakeDamage(float amount)

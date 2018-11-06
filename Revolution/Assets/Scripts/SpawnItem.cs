@@ -27,7 +27,7 @@ public class SpawnItem : MonoBehaviour {
 
         List<Transform> temp_list = new List<Transform>(SpawnPoints);
 
-        for (int i = 0; i < 5; ++i)
+        for (int i = 0; i < 2; ++i)
         {
             int spawinIndex = Random.Range(0, SpawnPoints.Length);
 
